@@ -4,7 +4,7 @@ import {Ingredient} from "./ingredient.model";
 @Injectable()
 export class ShoppingListService {
 
-  ingredientAdded = new EventEmitter<Ingredient>();
+  ingredientAdded = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Garlic', 5),
@@ -20,6 +20,6 @@ export class ShoppingListService {
 
   addIngredient(ingredient : Ingredient) {
     this.ingredients.push(ingredient);
-    this.ingredientAdded.emit(ingredient);
+    this.ingredientAdded.emit(this.getIngredients());
   }
 }
