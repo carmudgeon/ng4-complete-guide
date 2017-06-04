@@ -6,13 +6,8 @@ import {ShoppingListService} from "./shared/shopping-list.service";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RecipeService, ShoppingListService]
+  providers: []
 })
 export class AppComponent {
-  loadedFeature = 'recipe';
 
-  onNavigate(feature: string) {
-    console.log(feature);
-    this.loadedFeature = feature;
-  }
 }
